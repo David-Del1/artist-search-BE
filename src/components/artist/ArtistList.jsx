@@ -1,24 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useArtists } from '../../state/artist.js';
+import Artist from './Artist';
 
-function ArtistList() {
-  const { artists, loading } = useArtists();
+const ArtistList = () => {
 
-  if(loading) return <h1>Loading...</h1>
+  const [searchedArtist, setArtist] = useState('artist\'s name');
+  const [page, setPage] = useState(1);
+
+  const { artists, loading } = useArtists(searchedArtist, page);
+
+  if(loading) return <h1>Loading...</h1>;
 
   const artistElements = artists.map(artist => (
+    console.log(artist),
     <li key={artist.id}>
-      <Artist />
+      <Artist {...artist} />
     </li>
   ));
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // const artists = await fetchArtists(searchedArtist, page);
+    // console.log(artists);
+    // return setArtist(artists);
+  };
+
   return (
     <>
-      <ul>
-        {artistElements}
-      </ul>
+      <>
+        <form onSubmit={handleSubmit}>
+          <input placeholder="artists name" onChange={((e) => setArtist(e.target.value))} value={searchedArtist}></input>
+        </form>
+      </>
+      <section>
+        <ul>
+          {artistElements}
+        </ul>
+        
+        <button disabled={page <= 1} onClick={() => setPage((prevPage) => prevPage - 1)}>&lt;</button>
+        <button disabled={artists.length < 25} onClick={() => setPage((prevPage) => prevPage + 1)}>&gt;</button>
+
+      </section>
     </>
   );
-}
+};
 
 export default ArtistList;
 
