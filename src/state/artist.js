@@ -15,7 +15,7 @@ export const useArtists = (name, page) => {
   return { artists, loading };
 };
 
-export const getReleaseList = (artistId, page) => {
+export const useAlbums = (artistId, page) => {
 
   const [loading, setLoading] = useState(true);
   const [releases, setReleases] = useState([]);
