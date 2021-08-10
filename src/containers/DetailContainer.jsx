@@ -1,10 +1,9 @@
 import React from 'react';
+import DetailsPage from '../components/details/DetailsPage';
 
 function DetailContainer() {
   return (
-    <div>
-            
-    </div>
+    <DetailsPage />
   );
 }
 
