@@ -5,8 +5,8 @@
 export const fetchArtists = async (name, page) => {
   const res = await fetch(`http://musicbrainz.org/ws/2/artist?query=${name}&fmt=json&limit=25`);
   const artists = await res.json();
-  const filteredArists = artists.artists;
+  const filteredArtists = artists.artists;
 
-  return filteredArists.slice((page - 1) * 25, page * 25);
+  return filteredArtists.slice((page - 1) * 25, page * 25);
 };
 

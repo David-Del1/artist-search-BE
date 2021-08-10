@@ -12,7 +12,6 @@ const ArtistList = () => {
   if(loading) return <h1>Loading...</h1>;
 
   const artistElements = artists.map(artist => (
-    console.log(artist),
     <li key={artist.id}>
       <Artist {...artist} />
     </li>
@@ -21,7 +20,6 @@ const ArtistList = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const artists = await fetchArtists(searchedArtist, page);
-    // console.log(artists);
     // return setArtist(artists);
   };
 
