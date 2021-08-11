@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Artist = ({ name, id }) => {  //id comes from parameter or do we use useParams method of react-router-dom???????????  OR either???
+const Artist = ({ name, id }) => { 
   
   return (
-    <Link to={`/${id}`}>
+    <Link to={`/artist/${id}`}>
       <div>
         <p>{name}</p>
         <p>{id}</p>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { fetchArtists } from '../services/artistApi';
+import { fetchRecordings } from '../services/recordingsApi';
 import { fetchReleases } from '../services/releasesApi';
+
 export const useArtists = (name, page) => {
 
   const [loading, setLoading] = useState(true);
@@ -10,7 +12,7 @@ export const useArtists = (name, page) => {
     fetchArtists(name, page)
       .then(setArtists)
       .finally(() => setLoading(false));
-  }, [name]); // do we need to add page inside array?
+  }, [name, page]); 
 
   return { artists, loading };
 };
@@ -24,7 +26,21 @@ export const useAlbums = (artistId, page) => {
     fetchReleases(artistId, page)
       .then(setReleases)
       .finally(() => setLoading(false));
-  }, [artistId]); // do we need to add page inside array?
+  }, [artistId, page]);
 
   return { releases, loading };
+};
+
+export const useRecordings = (releaseId) => {
+
+  const [loading, setLoading] = useState(true);
+  const [recordings, setRecordings] = useState([]);
+
+  useEffect(() => {
+    fetchRecordings(releaseId)
+      .then(setRecordings)
+      .finally(() => setLoading(false));
+  }, [releaseId]);
+
+  return { recordings, loading };
 };
