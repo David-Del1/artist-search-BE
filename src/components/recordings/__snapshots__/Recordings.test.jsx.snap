@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`recordings Component li with h2 inside 1`] = `
+<DocumentFragment>
+  <li>
+    <h2>
+      Hi I'm guessing
+    </h2>
+  </li>
+</DocumentFragment>
+`;

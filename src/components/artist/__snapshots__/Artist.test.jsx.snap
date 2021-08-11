@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`album component makes a album 1`] = `
+<DocumentFragment>
+  <section>
+    <p>
+      Sara
+    </p>
+    <p>
+      5
+    </p>
+  </section>
+</DocumentFragment>
+`;
