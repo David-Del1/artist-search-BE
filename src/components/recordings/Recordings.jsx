@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRecordings } from '../../state/artist';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Recordings = () => {
 
@@ -12,9 +12,7 @@ const Recordings = () => {
   const recordingElements = recordings.map(record => {
     return (
       <li key={record.id}>
-        <Link to={`/lyrics/${record.title}`}>
-          <h2>{record.title}</h2>
-        </Link>
+        <h2>{record.title}</h2>
       </li>
     );
   });
