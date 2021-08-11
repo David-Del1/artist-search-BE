@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchArtists } from '../services/artistApi';
+import { fetchLyrics } from '../services/lyricsApi';
 import { fetchRecordings } from '../services/recordingsApi';
 import { fetchReleases } from '../services/releasesApi';
 
@@ -43,4 +44,18 @@ export const useRecordings = (releaseId) => {
   }, [releaseId]);
 
   return { recordings, loading };
+};
+
+export const useLyrics = (artist, songTitle) => {
+
+  const [loading, setLoading] = useState(true);
+  const [lyrics, setLyrics] = useState('');
+
+  useEffect(() => {
+    fetchLyrics(artist, songTitle)
+      .then(setLyrics)
+      .finally(() => setLoading(false));
+  }, [artist, songTitle]);
+
+  return { lyrics, loading };
 };

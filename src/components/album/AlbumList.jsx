@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAlbums } from '../../state/artist';
-import Album from '../album/Album';
+import Album from './Album';
 
-function DetailsPage() {
+function AlbumList() {
   const [page, setPage] = useState(1);
   const { id } = useParams();
 
@@ -28,5 +28,5 @@ function DetailsPage() {
   );
 }
 
-export default DetailsPage;
+export default AlbumList;
 

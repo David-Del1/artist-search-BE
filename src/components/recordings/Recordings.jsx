@@ -14,12 +14,11 @@ const Recordings = () => {
 
   const recordingElements = recordings.map(record => {
     return (
-      <Link to={`/artist/album/lyrics/${record.title}/${record.somethingimnotsure}`}>
-        <li key={record.id}>
+      <li key={record.id}>
+        <Link to={`/lyrics/${record.title}`}>
           <h2>{record.title}</h2>
-          <Lyrics />
-        </li>
-      </Link>
+        </Link>
+      </li>
     );
   });
 
