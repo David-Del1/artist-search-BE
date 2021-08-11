@@ -1,7 +1,6 @@
 import React from 'react';
 import { useRecordings } from '../../state/artist';
 import { useParams } from 'react-router-dom';
-import styled from 'styled-components';
 
 const Recordings = () => {
 
@@ -12,9 +11,9 @@ const Recordings = () => {
 
   const recordingElements = recordings.map(record => {
     return (
-      <RecordingsStyled key={record.id}>
+      <li key={record.id}>
         <h2>{record.title}</h2>
-      </RecordingsStyled>
+      </li>
     );
   });
 
