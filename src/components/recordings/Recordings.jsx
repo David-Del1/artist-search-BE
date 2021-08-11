@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRecordings } from '../../state/artist';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Recordings = () => {
 
@@ -11,11 +12,9 @@ const Recordings = () => {
 
   const recordingElements = recordings.map(record => {
     return (
-      <li key={record.id}>
-        <Link to={`/lyrics/${record.title}`}>
-          <h2>{record.title}</h2>
-        </Link>
-      </li>
+      <RecordingsStyled key={record.id}>
+        <h2>{record.title}</h2>
+      </RecordingsStyled>
     );
   });
 
@@ -26,3 +25,13 @@ const Recordings = () => {
 };
 
 export default Recordings;
+
+const RecordingsStyled = styled.li`
+  background-color: lightblue;
+  border: 1px solid pink;
+  text-align: center;
+  border-radius: 2rem;
+  margin: 1rem;
+  width: 50%;
+  justify-content: center;
+`;
