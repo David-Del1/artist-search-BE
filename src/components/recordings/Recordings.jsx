@@ -24,3 +24,13 @@ const Recordings = () => {
 };
 
 export default Recordings;
+
+const RecordingsStyled = styled.li`
+  background-color: lightblue;
+  border: 1px solid pink;
+  text-align: center;
+  border-radius: 2rem;
+  margin: 1rem;
+  width: 50%;
+  justify-content: center;
+`;

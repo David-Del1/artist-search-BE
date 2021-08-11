@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchCoverArt } from '../../services/coverArtApi';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 function Album({ title, id }) {
   const [url, setUrl] = useState('');
@@ -14,12 +15,12 @@ function Album({ title, id }) {
   });
 
   return (
-    <section>
+    <AlbumStyled>
       <Link to={`/artist/album/${id}`}>
         <h1>{title}</h1>
         <img src={url} alt={title} />
       </ Link>
-    </section>
+    </AlbumStyled>
   );
 }
 
@@ -29,4 +30,21 @@ Album.propTypes = {
 };
 
 export default Album;
+
+const AlbumStyled = styled.section`
+  background-color: lightblue;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all ease-in-out 0.2s;
+  border-radius: 15px;
+
+  &:hover {
+    transform: rotate(-10deg);
+    background-color: tomato;
+  }
+`;
 
