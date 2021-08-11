@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAlbums } from '../../state/artist';
 import Album from './Album';
+import styled from 'styled-components';
 
 function AlbumList() {
   const [page, setPage] = useState(1);
@@ -18,15 +19,28 @@ function AlbumList() {
 
   return (
     <>
-      <ul>
+      <AlbumListStyled>
         {albumElements}
-      </ul>
-
-      <button disabled={page <= 1} onClick={() => setPage((prevPage) => prevPage - 1)}>&lt;</button>
-      <button disabled={releases.length < 5} onClick={() => setPage((prevPage) => prevPage + 1)}>&gt;</button>
+      </AlbumListStyled>
+      <div className="buttons">
+        <button disabled={page <= 1} onClick={() => setPage((prevPage) => prevPage - 1)}>☜</button>
+        <button disabled={releases.length < 5} onClick={() => setPage((prevPage) => prevPage + 1)}>☞</button>
+      </div>
     </>
   );
 }
 
 export default AlbumList;
 
+
+const AlbumListStyled = styled.ul`
+  margin-top: 4rem;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  img{
+    max-height: 200px;
+  }
+`;
