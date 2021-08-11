@@ -23,7 +23,7 @@ function DetailsPage() {
       </ul>
 
       <button disabled={page <= 1} onClick={() => setPage((prevPage) => prevPage - 1)}>&lt;</button>
-      <button disabled={releases.length < 25} onClick={() => setPage((prevPage) => prevPage + 1)}>&gt;</button>
+      <button disabled={releases.length < 5} onClick={() => setPage((prevPage) => prevPage + 1)}>&gt;</button>
     </>
   );
 }

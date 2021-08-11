@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchCoverArt } from '../../services/coverArtApi';
+import { Link } from 'react-router-dom';
 
 function Album({ title, id }) {
   const [url, setUrl] = useState('');
@@ -12,14 +13,13 @@ function Album({ title, id }) {
     })();
   });
 
-
-  console.log('ALBUM ID', id);
-  console.log(url);
   return (
-    <>
-      <h1>{title}</h1>
-      <img src={url} alt={title} />
-    </>
+    <section>
+      <Link to={`/artist/album/${id}`}>
+        <h1>{title}</h1>
+        <img src={url} alt={title} />
+      </ Link>
+    </section>
   );
 }
 

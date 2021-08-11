@@ -36,7 +36,7 @@ const ArtistList = () => {
         </ul>
         
         <button disabled={page <= 1} onClick={() => setPage((prevPage) => prevPage - 1)}>&lt;</button>
-        <button disabled={artists.length < 25} onClick={() => setPage((prevPage) => prevPage + 1)}>&gt;</button>
+        <button disabled={artists.length < 10} onClick={() => setPage((prevPage) => prevPage + 1)}>&gt;</button>
 
       </section>
     </>
