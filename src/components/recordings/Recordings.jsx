@@ -1,11 +1,8 @@
 import React from 'react';
 import { useRecordings } from '../../state/artist';
 import { Link, useParams } from 'react-router-dom';
-import Lyrics from '../lyrics/Lyrics';
 
 const Recordings = () => {
-
-  // const [searchedRecordings, setRecordings] = useState(''); 
 
   const { id } = useParams();
   const { recordings, loading } = useRecordings(id); 

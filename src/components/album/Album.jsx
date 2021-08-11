@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { fetchCoverArt } from '../../services/coverArtApi';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Album({ title, id }) {
   const [url, setUrl] = useState('');
 
   useEffect(() => {
     (async () => {
-
       const link = await fetchCoverArt(id);
       setUrl(link);
     })();
@@ -22,6 +22,11 @@ function Album({ title, id }) {
     </section>
   );
 }
+
+Album.propTypes = {
+  title: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired
+};
 
 export default Album;
 

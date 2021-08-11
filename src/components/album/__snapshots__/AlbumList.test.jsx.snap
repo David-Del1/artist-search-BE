@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Album List Component ul and two buttons 1`] = `
+<DocumentFragment>
+  <h1>
+    Loading...
+  </h1>
+</DocumentFragment>
+`;

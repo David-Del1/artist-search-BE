@@ -19,8 +19,6 @@ const ArtistList = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // const artists = await fetchArtists(searchedArtist, page);
-    // return setArtist(artists);
   };
 
   return (

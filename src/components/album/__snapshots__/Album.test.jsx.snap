@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`album component makes a album 1`] = `
+<DocumentFragment>
+  <section>
+    <a
+      href="/artist/album/undefined"
+    >
+      <h1 />
+      <img
+        src=""
+      />
+    </a>
+  </section>
+</DocumentFragment>
+`;
